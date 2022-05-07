@@ -72,7 +72,7 @@ dk = d-l_1
 dval = 0.54
 sd_reg = 0.12
 
-Vd_reg = (M.pi/4)*(dk^2-dval^2)*sd_reg 
+Vd_reg = (M.pi/4)*(dk**2-dval**2)*sd_reg 
 
 #Объем раб.лопаток для регулирующей ступени
 F_atl = 0.000244
@@ -89,7 +89,7 @@ W2_mod = 0.39
 beta_inst2 = betta_2-12.5*(t2_-0.75)+20.2
 z2 = int((M.pi*d)/(b_2*t2_))
 
-Vlop_reg = F_atl*l2_reg*z2*(b2_reg/b2_atl)^2
+Vlop_reg = F_atl*l2_reg*z2*(b2_reg/b2_atl)**2
 
 #Объем бандажа для регулирующей ступени
 B2 = b2_reg*M.sin(M.radians(beta_inst2))
@@ -97,7 +97,7 @@ B_band = B2+0.01 #м
 delta_band = 0.005 #м
 dp = d+l2_reg
 
-Vband_reg = B_band*delta_band*3.14*dp
+Vband_reg = B_band*delta_band*M.pi*dp
 
 #Масса диска рег.ступени
 rho = 7800 #кг/м3
@@ -111,7 +111,7 @@ md_reg = (Vd_reg+Vlop_reg+Vband_reg)*rho
 sd_nereg = 0.06
 z_nereg = z-1
 
-Vd_nereg = M.pi/4*(dk^2-dval^2)*sd_nereg*z_nereg 
+Vd_nereg = M.pi/4*(dk**2-dval**2)*sd_nereg*z_nereg 
 
 #Объем раб.лопаток для нерегулирующей ступени
 b2_nereg = 0.05
@@ -122,7 +122,7 @@ z_2z = (M.pi*d2z)/(0.65*b2_nereg)
 z_21=(M.pi*d_21)/(0.65*b2_nereg) 
 Z2_sr = (z_21+z_2z)/2
 
-Vlop_nereg = F_atl*l2_nereg*Z2_sr*z_nereg*(b2_nereg/b2_atl)^2
+Vlop_nereg = F_atl*l2_nereg*Z2_sr*z_nereg*(b2_nereg/b2_atl)**2
 
 #Объем бандажа для нерегулирующей ступени
 B2_ = b2_nereg*M.sin(M.radians(beta_inst2))
@@ -148,7 +148,7 @@ L2 = 0.48
 L3 = 0.36
 L4 = 5.16
 
-m_val = M.pi/4*((dval^2-d_otv^2)*L4-(dsh_left^2-d_otv^2)*L2-(dsh_right^2-d_otv^2)*L3)*rho
+m_val = M.pi/4*((dval**2-d_otv**2)*L4-(dsh_left**2-d_otv**2)*L2-(dsh_right**2-d_otv**2)*L3)*rho
 
 
 
