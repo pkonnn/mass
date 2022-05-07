@@ -2,17 +2,18 @@ import numpy as np
 import matplotlib
 import matplotlib.pyplot as plt
 import streamlit as st
+import math as M
 
 st.subheader('Определение массы ротора ЦВД')
 
 st.write('_Конструкция ротора_')
 
 z = st.number_input('Количество ступеней z', value = 9)
-drs = 1100
-rrs = 1100/2
+drs = 1085
+rrs = drs/2
 
 d_val = 540
-r_val = 540 / 2
+r_val = d_val/2
 
 d_st = 820
 r_st = d_st/ 2
@@ -65,26 +66,36 @@ st.pyplot(fig)
 st.write('_Масса ротора_')
 
 #Объем диска для регулирующей ступени
-dk 
-dval
-sd_reg
+d = 1.1
+l_1 = 0.015
+dk = d-l_1
+dval = 0.54
+sd_reg = 0.12
 
-Vd_reg = 3.14/4*(dk^2-dval^2)*sd_reg 
+Vd_reg = M.pi/4*(dk^2-dval^2)*sd_reg 
 
 #Объем раб.лопаток для регулирующей ступени
-F_atl
-b2_reg
-b2_atl
-l2_reg
-z2
+F_atl = 0.000244
+b2_reg = 0.03
+b2_atl = 0.0259
+Delta = 0.003
+l2_reg =l_1+Delta
+betta_2=15 
+#'P-23-14A' тип профиля
+t2_ = 0.63
+b2_mod = 2.59
+f2_mod = 2.44
+W2_mod = 0.39
+beta_inst2 = betta_2-12.5*(t2_-0.75)+20.2
+z2 = int((M.pi*d)/(b_2*t2_))
 
 Vlop_reg = F_atl*l2_reg*z2*(b2_reg/b2_atl)^2
 
 #Объем бандажа для регулирующей ступени
-B2
+B2 = b2_reg*M.sin(M.radians(beta_inst2))
 B_band = B2+0.01 #м
 delta_band = 0.005 #м
-dp
+dp = d+l2_reg
 
 Vband_reg = B_band*delta_band*3.14*dp
 
@@ -97,48 +108,47 @@ md_reg = (Vd_reg+Vlop_reg+Vband_reg)*rho
 
 
 #Объем диска для нерегулирующей ступени
-dk_n 
-dval
-sd_nereg
+sd_nereg = 0.06
 z_nereg = z-1
 
-Vd_nereg = 3.14/4*(dk_n^2-dval_n^2)*sd_nereg*z_nereg 
+Vd_nereg = M.pi/4*(dk^2-dval^2)*sd_nereg*z_nereg 
 
 #Объем раб.лопаток для нерегулирующей ступени
-F_atl
-b2_nereg
-b2_atl
-l_21
-l_2z
+b2_nereg = 0.05
+l_21 = 0.041
+l_2z = 0.105
 l2_nereg = (l_21+l_2z)/2
-z_2z
-z_21=(3.14*d_21)/(0.65*b2) #who is b2???
+z_2z = (M.pi*d2z)/(0.65*b2_nereg)
+z_21=(M.pi*d_21)/(0.65*b2_nereg) 
 Z2_sr = (z_21+z_2z)/2
 
 Vlop_nereg = F_atl*l2_nereg*Z2_sr*z_nereg*(b2_nereg/b2_atl)^2
 
 #Объем бандажа для нерегулирующей ступени
-B2
-B_band = B2+0.01 #м
-delta_band = 0.005 #м
-dp1
-dpz
+B2_ = b2_nereg*M.sin(M.radians(beta_inst2))
+B_band_ = B2_+0.01 #м
+delta_band_ = 0.005 #м
+d21=0.84
+d2z=0.904
+l_11=0.038 
+dp1 = d21+l_11
+dpz = d2z+l_2z
 dp_sr = (dp1+dpz)/2
 
-Vband_nereg = B_band*delta_band*3.14*dp_sr*z_nereg
+Vband_nereg = B_band_*delta_band_*M.pi*dp_sr*z_nereg
 
 #Масса диска нерег.ступени
 md_nereg = (Vd_nereg+Vlop_nereg+Vband_nereg)*rho
 
 #Масса вала
-dsh_right
-dsh_left #меньше правого
+dsh_right = 0.36
+dsh_left = 0.32 #меньше правого
 d_otv = 0.1 #м
-L2
-L3
-L4
+L2 = 0.48
+L3 = 0.36
+L4 = 5.16
 
-m_val = 3.14/4*((dval^2-d_otv^2)*L4-(dsh_left^2-d_otv^2)*L2-(dsh_right^2-d_otv^2)*L3)*rho
+m_val = M.pi/4*((dval^2-d_otv^2)*L4-(dsh_left^2-d_otv^2)*L2-(dsh_right^2-d_otv^2)*L3)*rho
 
 
 
