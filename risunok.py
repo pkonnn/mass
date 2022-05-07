@@ -3,7 +3,8 @@ import matplotlib
 import matplotlib.pyplot as plt
 import streamlit as st
 
-st.text("Конструкция ротора ЦВД")
+st.subheader('Определение массы ротора ЦВД')
+st.text("Конструкция ротора")
 z = 9
 drs = 1100
 rrs = 1100/2
