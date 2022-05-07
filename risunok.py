@@ -5,6 +5,7 @@ import streamlit as st
 import math as M
 
 st.subheader('Определение массы ротора ЦВД')
+st.write("Выполнили Конюхова П.О. и Крыницкая Д.А.")
 
 st.write('_Конструкция ротора_')
 
