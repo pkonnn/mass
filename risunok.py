@@ -7,7 +7,9 @@ st.subheader('Определение массы ротора ЦВД')
 
 st.write('_Конструкция ротора_')
 
-z = st.number_input(Количество ступеней z', value = 9)
+d = st.number_input('d, м', value = 1.1)
+
+z = st.number_input('Количество ступеней z', value = 9)
 drs = 1100
 rrs = 1100/2
 
