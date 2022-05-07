@@ -4,7 +4,9 @@ import matplotlib.pyplot as plt
 import streamlit as st
 
 st.subheader('Определение массы ротора ЦВД')
-st.text("Конструкция ротора")
+
+st.write('_Конструкция ротора_')
+
 z = 9
 drs = 1100
 rrs = 1100/2
@@ -60,6 +62,7 @@ st.pyplot(fig)
 
 
 
+st.write('_Масса ротора_')
 
 #Объем диска для регулирующей ступени
 dk 
