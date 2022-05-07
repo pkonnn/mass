@@ -118,8 +118,10 @@ b2_nereg = 0.05
 l_21 = 0.041
 l_2z = 0.105
 l2_nereg = (l_21+l_2z)/2
+d21=0.84
+d2z=0.904
 z_2z = (M.pi*d2z)/(0.65*b2_nereg)
-z_21=(M.pi*d_21)/(0.65*b2_nereg) 
+z_21=(M.pi*d21)/(0.65*b2_nereg) 
 Z2_sr = (z_21+z_2z)/2
 
 Vlop_nereg = F_atl*l2_nereg*Z2_sr*z_nereg*(b2_nereg/b2_atl)**2
@@ -157,3 +159,5 @@ m_val = M.pi/4*((dval**2-d_otv**2)*L4-(dsh_left**2-d_otv**2)*L2-(dsh_right**2-d_
 m_rot = m_val+md_nereg+md_reg
 
 st.write('Масса ротора:', m_rot)
+st.write("""Macca ротора  
+                m_rot = %.2f кВт""" % m_rot)
