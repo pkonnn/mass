@@ -100,7 +100,7 @@ md_reg = (Vd_reg+Vlop_reg+Vband_reg)*rho
 dk_n 
 dval
 sd_nereg
-z_nereg
+z_nereg = z-1
 
 Vd_nereg = 3.14/4*(dk_n^2-dval_n^2)*sd_nereg*z_nereg 
 
