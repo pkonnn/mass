@@ -15,6 +15,8 @@ r_st = d_st/ 2
 r_r = 410
 r_r2 = r_val - 160
 
+fig = plt.figure()
+
 plt.plot([0,0],[0,rrs],c="g")
 plt.plot([0,120],[rrs,rrs],c="g")
 plt.plot([120,120],[rrs,0],c="g")
@@ -51,3 +53,4 @@ plt.plot([420+n1-180+960+480,420+n1-180+960+480],[r_r2,0],c="g")
 plt.plot([-720-n2+180-1440-480-300,420+n1-180+960+480+300],[0,0],linewidth = '1',c="blue")
 plt.show()
 
+st.pyplot(fig)
