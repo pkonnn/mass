@@ -87,7 +87,7 @@ b2_mod = 2.59
 f2_mod = 2.44
 W2_mod = 0.39
 beta_inst2 = betta_2-12.5*(t2_-0.75)+20.2
-z2 = ((M.pi*d)/(b_2*t2_))
+z2 = ((M.pi*d)/(b2_reg*t2_))
 
 Vlop_reg = F_atl*l2_reg*z2*(b2_reg/b2_atl)**2
 
