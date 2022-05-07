@@ -3,6 +3,7 @@ import matplotlib
 import matplotlib.pyplot as plt
 import streamlit as st
 
+st.write = ("Конструкция ротора ЦВД")
 z = 9
 drs = 1100
 rrs = 1100/2
@@ -52,6 +53,6 @@ plt.plot([420+n1-180+960,420+n1-180+960+480],[r_r2,r_r2],c="g")
 plt.plot([420+n1-180+960+480,420+n1-180+960+480],[r_r2,0],c="g")
 
 plt.plot([-720-n2+180-1440-480-300,420+n1-180+960+480+300],[0,0],linewidth = '1',c="blue")
-plt.show()
+plt.grid()
 
 st.pyplot(fig)
