@@ -3,7 +3,7 @@ import matplotlib
 import matplotlib.pyplot as plt
 import streamlit as st
 
-st.write = ("Конструкция ротора ЦВД")
+st.text("Конструкция ротора ЦВД")
 z = 9
 drs = 1100
 rrs = 1100/2
