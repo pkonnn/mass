@@ -157,7 +157,7 @@ m_val = M.pi/4*((dval**2-d_otv**2)*L4-(dsh_left**2-d_otv**2)*L2-(dsh_right**2-d_
 
 
 #Масса ротора
-m_rot = (m_val+md_nereg+md_reg)/1000
+m_rot = (m_val+md_nereg+md_reg)
 
 st.write("""Macca вала  
                 m_val = %.2f  кг""" % m_val)
@@ -166,4 +166,4 @@ st.write("""Macca диска регулирующей ступени
 st.write("""Macca диска нерегулирующей ступени  
                 md_nereg = %.2f  кг""" % md_nereg)
 st.write("""Macca ротора  
-                m_rot = %.2f  т""" % m_rot)
+                m_rot = %.2f  кг""" % m_rot)
