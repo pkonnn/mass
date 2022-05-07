@@ -4,8 +4,8 @@ import matplotlib.pyplot as plt
 import streamlit as st
 import math as M
 
-st.subheader('Определение массы ротора ЦВД')
-st.write("Выполнили Конюхова П.О. и Крыницкая Д.А.")
+st.title('Определение массы ротора ЦВД')
+st.subheader('Выполнили Конюхова П.О. и Крыницкая Д.А.')
 
 st.write('_Конструкция ротора_')
 
