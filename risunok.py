@@ -72,7 +72,7 @@ dk = d-l_1
 dval = 0.54
 sd_reg = 0.12
 
-Vd_reg = M.pi/4*(dk^2-dval^2)*sd_reg 
+Vd_reg = (M.pi/4)*(dk^2-dval^2)*sd_reg 
 
 #Объем раб.лопаток для регулирующей ступени
 F_atl = 0.000244
